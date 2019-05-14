@@ -9,27 +9,22 @@
 import Foundation
 
 let templateName = "MVPRTemplate.xctemplate"
-let destinationRelativePath = "/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/Project Templates/iOS/Application"
-
-func printInConsole(_ message: Any) {
-    print("====================================")
-    print("\(message)")
-    print("====================================")
-}
 
 func moveTemplate() {
     let fileManager = FileManager.default
-    let destinationPath = bash(command: "xcode-select", arguments: ["--print-path"]).appending(destinationRelativePath)
+
+    let user = bash(command: "whoami", arguments: [])
+    let destinationPath = "/Users/\(user)/Library/Developer/Xcode/Templates/MVPR/"
+    let destinationFilePath = "\(destinationPath)/\(templateName)"
     do {
-        if !fileManager.fileExists(atPath:"\(destinationPath)/\(templateName)") {
-            try fileManager.copyItem(atPath: templateName, toPath: "\(destinationPath)/\(templateName)")
-            printInConsole("✅  Template installed succesfully 🎉. Enjoy it 🙂")
-        } else {
-            try _ = fileManager.replaceItemAt(URL(fileURLWithPath:"\(destinationPath)/\(templateName)"), withItemAt: URL(fileURLWithPath:templateName))
-            printInConsole("✅  Template already exists. So has been replaced succesfully 🎉. Enjoy it 🙂")
+        if fileManager.fileExists(atPath: destinationFilePath) {
+            print("⚠️   Template already exists. Updating...  ⚠️")
+            try fileManager.removeItem(atPath: destinationFilePath)
         }
+        try fileManager.copyItem(atPath: templateName, toPath: destinationFilePath)
+        print("✅  Template installed succesfully.  🍻")
     } catch let error as NSError {
-        printInConsole("❌  Ooops! Something went wrong 😡 : \(error.localizedFailureReason!)")
+        print("❌  Ooops! Something went wrong 🤮🤮🤮: \(error.localizedFailureReason!)")
     }
 }
 
