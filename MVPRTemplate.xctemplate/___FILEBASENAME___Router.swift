@@ -10,13 +10,13 @@ import UIKit
 
 class ___FILEBASENAMEASIDENTIFIER___ {
     
-    weak var viewController:UIViewController?
+    weak var viewController: UIViewController?
     
-    init(routing viewController:UIViewController) {
+    init(routing viewController: UIViewController) {
         self.viewController = viewController
     }
     
-    func prepare(for segue:UIStoryboardSegue, sender:Any?) {
+    func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
     }
     

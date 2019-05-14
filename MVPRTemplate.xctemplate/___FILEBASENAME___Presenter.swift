@@ -10,14 +10,15 @@ import UIKit
 
 class ___FILEBASENAMEASIDENTIFIER___ {
   
-    private weak var view:___VARIABLE_sceneName:identifier___PresenterView?
-    private var router:___VARIABLE_sceneName:identifier___Router
-  
-    init(view:___VARIABLE_sceneName:identifier___PresenterView, router:___VARIABLE_sceneName:identifier___Router) {
+    private weak var view: ___VARIABLE_sceneName:identifier___PresenterView?
+    private var router: ___VARIABLE_sceneName:identifier___Router
+
+    init(view: ___VARIABLE_sceneName:identifier___PresenterView,
+         router: ___VARIABLE_sceneName:identifier___Router) {
         self.view = view
         self.router = router
     }
-    
+
     func viewDidLoad() {
         
     }
@@ -38,8 +39,8 @@ class ___FILEBASENAMEASIDENTIFIER___ {
         
     }
     
-    func prepare(for segue:UIStoryboardSegue, sender:Any?) {
-        router.prepare(for: segue, sender: sender)
+    func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        self.router.prepare(for: segue, sender: sender)
     }
     
 }

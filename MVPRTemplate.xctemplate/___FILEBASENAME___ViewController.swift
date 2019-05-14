@@ -8,40 +8,40 @@
 
 import UIKit
 
-class ___FILEBASENAMEASIDENTIFIER___ : UIViewController, ___VARIABLE_sceneName:identifier___PresenterView {
+class ___FILEBASENAMEASIDENTIFIER___: UIViewController, ___VARIABLE_sceneName:identifier___PresenterView {
   
-    lazy var presenter = ___VARIABLE_sceneName:identifier___Presenter(
+    private(set) lazy var presenter = ___VARIABLE_sceneName:identifier___Presenter(
         view: self,
         router: ___VARIABLE_sceneName:identifier___Router(routing: self)
     )
   
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.viewDidLoad()
+        self.presenter.viewDidLoad()
     }
     
-    override func viewWillAppear(_ animated:Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        presenter.viewWillAppear()
+        self.presenter.viewWillAppear()
     }
 
-    override func viewDidAppear(_ animated:Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        presenter.viewDidAppear()
+        self.presenter.viewDidAppear()
     }
     
-    override func viewWillDisappear(_ animated:Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        presenter.viewWillDisappear()
+        self.presenter.viewWillDisappear()
     }
     
-    override func viewDidDisappear(_ animated:Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        presenter.viewDidDisappear()
+        self.presenter.viewDidDisappear()
     }
     
-    override func prepare(for segue:UIStoryboardSegue, sender:Any?) {
-        presenter.prepare(for: segue, sender: sender)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        self.presenter.prepare(for: segue, sender: sender)
     }
 
 }
