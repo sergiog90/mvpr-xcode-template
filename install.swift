@@ -21,6 +21,7 @@ func moveTemplate() {
             print("⚠️   Template already exists. Updating...  ⚠️")
             try fileManager.removeItem(atPath: destinationFilePath)
         }
+        try fileManager.createDirectory(atPath: destinationPath, withIntermediateDirectories: false, attributes: nil)
         try fileManager.copyItem(atPath: templateName, toPath: destinationFilePath)
         print("✅  Template installed succesfully.  🍻")
     } catch let error as NSError {
