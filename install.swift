@@ -1,33 +1,12 @@
 //
 //  main.swift
-//  InstallVIPERTemplate
+//  Install Template
 //
-//  Created by Juanpe Catalán on 17/02/2017.
-//  Copyright © 2017 Juanpe Catalán. All rights reserved.
+//  Created by Sergio Garcia on 16/07/2019.
+//  Copyright © 2019 Sergio García. All rights reserved.
 //
 
 import Foundation
-
-let templateName = "MVPRTemplate.xctemplate"
-
-func moveTemplate() {
-    let fileManager = FileManager.default
-
-    let user = bash(command: "whoami", arguments: [])
-    let destinationPath = "/Users/\(user)/Library/Developer/Xcode/Templates/MVPR/"
-    let destinationFilePath = "\(destinationPath)/\(templateName)"
-    do {
-        if fileManager.fileExists(atPath: destinationFilePath) {
-            print("⚠️   Template already exists. Updating...  ⚠️")
-            try fileManager.removeItem(atPath: destinationFilePath)
-        }
-        try fileManager.createDirectory(atPath: destinationPath, withIntermediateDirectories: false, attributes: nil)
-        try fileManager.copyItem(atPath: templateName, toPath: destinationFilePath)
-        print("✅  Template installed succesfully.  🍻")
-    } catch let error as NSError {
-        print("❌  Ooops! Something went wrong 🤮🤮🤮: \(error.localizedFailureReason!)")
-    }
-}
 
 func shell(launchPath: String, arguments: [String]) -> String {
     let task = Process()
@@ -53,4 +32,48 @@ func bash(command: String, arguments: [String]) -> String {
     return shell(launchPath: whichPathForCommand, arguments: arguments)
 }
 
-moveTemplate()
+let fileManager = FileManager.default
+let user = bash(command: "whoami", arguments: [])
+let templatesPath = "/Users/\(user)/Library/Developer/Xcode/Templates/File Templates"
+let MVPRPath = "\(templatesPath)/MVPR"
+
+func checkMVPRIntermediates() throws {
+    if !fileManager.fileExists(atPath: MVPRPath) {
+        try fileManager.createDirectory(atPath: MVPRPath,
+                                        withIntermediateDirectories: false,
+                                        attributes: nil)
+    }
+}
+
+func path(for template: String) -> String {
+    return "\(MVPRPath)/\(template)"
+}
+
+func removeIfExists(template: String) throws {
+    let templatePath = path(for: template)
+    if fileManager.fileExists(atPath: templatePath) {
+        print("⚠️ Template already exists. Removing previous... ⚠️")
+        try fileManager.removeItem(atPath: templatePath)
+    }
+}
+
+func copy(template: String) throws {
+    let templatePath = path(for: template)
+    try fileManager.copyItem(atPath: template,
+                             toPath: templatePath)
+}
+
+func installSceneTemplate() {
+    let templateName = "MVPRScene.xctemplate"
+    do {
+        try checkMVPRIntermediates()
+        try removeIfExists(template: templateName)
+        try copy(template: templateName)
+        print("✅ Template installed succesfully. 🍻")
+    } catch let error as NSError {
+        print("❌ Ooops! Something went wrong 🤮🤮🤮: \(error.localizedFailureReason!)")
+    }
+}
+
+
+installSceneTemplate()
