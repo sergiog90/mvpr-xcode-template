@@ -5,24 +5,32 @@
 	<key>DefaultCompletionName</key>
 	<string>MVPR Scene</string>
 	<key>Description</key>
-	<string>Create a MVPR scene</string>
+	<string>Create a MVPR scene.</string>
 	<key>Kind</key>
 	<string>Xcode.IDEKit.TextSubstitutionFileTemplateKind</string>
+    <key>Platforms</key>
+	<array>
+		<string>com.apple.platform.iphoneos</string>
+	</array>
+	<key>SortOrder</key>
+	<string>2</string>
+	<key>Summary</key>
+	<string>Create a MVPR scene.</string>
 	<key>Options</key>
 	<array>
-		<dict>
+        <dict>
 			<key>Description</key>
-			<string>The name scene</string>
+			<string>The scene name</string>
 			<key>Identifier</key>
 			<string>sceneName</string>
 			<key>Name</key>
-			<string>Scene:</string>
-			<key>NotPersisted</key>
-			<true/>
+			<string>Scene Name:</string>
 			<key>Required</key>
-			<true/>
+			<string>YES</string>
 			<key>Type</key>
 			<string>text</string>
+            <key>NotPersisted</key>
+			<string>YES</string>
 		</dict>
 		<dict>
 			<key>Default</key>
@@ -33,13 +41,5 @@
 			<string>static</string>
 		</dict>
 	</array>
-	<key>Platforms</key>
-	<array>
-		<string>com.apple.platform.iphoneos</string>
-	</array>
-	<key>SortOrder</key>
-	<string>2</string>
-	<key>Summary</key>
-	<string>This generates a new MVPR scene.</string>
 </dict>
 </plist>

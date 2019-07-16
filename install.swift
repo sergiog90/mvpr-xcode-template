@@ -64,7 +64,7 @@ func copy(template: String) throws {
 }
 
 func installSceneTemplate() {
-    let templateName = "MVPRScene.xctemplate"
+    let templateName = "Scene.xctemplate"
     do {
         try checkMVPRIntermediates()
         try removeIfExists(template: templateName)

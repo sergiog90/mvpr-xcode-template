@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ___FILEBASENAMEASIDENTIFIER___: UIViewController, ___VARIABLE_sceneName:identifier___PresenterView {
+class ___FILEBASENAMEASIDENTIFIER___: UIViewController {
 
     private(set) lazy var presenter: ___VARIABLE_sceneName:identifier___Presenter = {
         let router = ___VARIABLE_sceneName:identifier___Router(routing: self)

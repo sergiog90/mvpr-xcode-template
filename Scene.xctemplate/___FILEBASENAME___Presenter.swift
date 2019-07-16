@@ -9,38 +9,28 @@
 import UIKit
 
 class ___FILEBASENAMEASIDENTIFIER___ {
-  
-    private weak var view: ___VARIABLE_sceneName:identifier___PresenterView?
+
+    private weak var view: ___VARIABLE_sceneName:identifier___View?
     private var router: ___VARIABLE_sceneName:identifier___Router
 
-    init(view: ___VARIABLE_sceneName:identifier___PresenterView,
+    init(view: ___VARIABLE_sceneName:identifier___View,
          router: ___VARIABLE_sceneName:identifier___Router) {
         self.view = view
         self.router = router
     }
 
-    func viewDidLoad() {
-        
-    }
-    
-    func viewWillAppear() {
-        
-    }
-    
-    func viewDidAppear() {
-        
-    }
-    
-    func viewWillDisappear() {
-        
-    }
-    
-    func viewDidDisappear() {
-        
-    }
-    
+    func viewDidLoad() {}
+
+    func viewWillAppear() {}
+
+    func viewDidAppear() {}
+
+    func viewWillDisappear() {}
+
+    func viewDidDisappear() {}
+
     func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         self.router.prepare(for: segue, sender: sender)
     }
-    
+
 }
