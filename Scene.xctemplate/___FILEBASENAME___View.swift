@@ -9,5 +9,5 @@
 import UIKit
 
 protocol ___FILEBASENAMEASIDENTIFIER___: class {
-    
+
 }
