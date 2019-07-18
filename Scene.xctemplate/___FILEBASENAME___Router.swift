@@ -10,9 +10,9 @@ import UIKit
 
 class ___FILEBASENAMEASIDENTIFIER___ {
 
-    weak var viewController: UIViewController?
+    weak var viewController: ___VARIABLE_sceneName:identifier___ViewController?
 
-    init(routing viewController: UIViewController) {
+    init(routing viewController: ___VARIABLE_sceneName:identifier___ViewController) {
         self.viewController = viewController
     }
 
