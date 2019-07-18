@@ -11,7 +11,7 @@ import UIKit
 class ___FILEBASENAMEASIDENTIFIER___ {
 
     private weak var view: ___VARIABLE_sceneName:identifier___View?
-    private var router: ___VARIABLE_sceneName:identifier___Router
+    private let router: ___VARIABLE_sceneName:identifier___Router
 
     init(view: ___VARIABLE_sceneName:identifier___View,
          router: ___VARIABLE_sceneName:identifier___Router) {
