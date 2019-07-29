@@ -34,7 +34,7 @@ func bash(command: String, arguments: [String]) -> String {
 
 let fileManager = FileManager.default
 let user = bash(command: "whoami", arguments: [])
-let templatesPath = "/Users/\(user)/Library/Developer/Xcode/Templates/File Templates"
+let templatesPath = "/Users/\(user)/Library/Developer/Xcode/Templates"
 let MVPRPath = "\(templatesPath)/MVPR"
 
 func checkMVPRIntermediates() throws {
